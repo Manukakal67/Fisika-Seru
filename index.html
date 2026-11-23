@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6fed">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Fisika Seru">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="ikon/favicon-48.png">
+  <link rel="apple-touch-icon" href="ikon/apple-touch-icon.png">
+  <title>Fisika Seru</title>
+  <!-- KaTeX disertakan secara lokal (lib/katex), jadi bisa dipakai tanpa internet. -->
+  <link rel="stylesheet" href="lib/katex/katex.min.css">
+  <link rel="stylesheet" href="css/tema.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/uji.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="btn-menu" class="ikon-btn" aria-label="Buka daftar bab">☰</button>
+    <a class="logo" href="#/">Fisika Seru</a>
+    <button id="btn-tema" class="ikon-btn" aria-label="Ganti tema terang atau gelap">🌙</button>
+  </header>
+
+  <div class="tata-letak">
+    <nav id="sidebar" aria-label="Daftar bab"></nav>
+    <div id="overlay"></div>
+    <main id="konten">Memuat...</main>
+  </div>
+
+  <!-- KaTeX. defer menjaga urutan: KaTeX dulu, lalu skrip aplikasi. -->
+  <script defer src="lib/katex/katex.min.js"></script>
+  <script defer src="lib/katex/auto-render.min.js"></script>
+
+  <!-- Skrip aplikasi -->
+  <script defer src="js/util.js"></script>
+  <script defer src="js/progres.js"></script>
+  <script defer src="js/simulasi.js"></script>
+  <script defer src="js/kuis.js"></script>
+
+  <!-- Simulasi per bab (kinematika ada di js/simulasi.js) -->
+  <script defer src="js/sim-vektor.js"></script>
+  <script defer src="js/sim-dinamika.js"></script>
+  <script defer src="js/sim-usaha-energi.js"></script>
+  <script defer src="js/sim-momentum.js"></script>
+  <script defer src="js/sim-elastisitas-shm.js"></script>
+  <script defer src="js/sim-benda-tegar.js"></script>
+  <script defer src="js/sim-statika-fluida.js"></script>
+  <script defer src="js/sim-dinamika-fluida.js"></script>
+  <script defer src="js/sim-termodinamika.js"></script>
+  <script defer src="js/sim-teori-kinetik.js"></script>
+  <script defer src="js/sim-relativitas.js"></script>
+
+  <!-- Data bab, sesuai urutan daftar bab -->
+  <script defer src="data/vektor.js"></script>
+  <script defer src="data/kinematika.js"></script>
+  <script defer src="data/dinamika.js"></script>
+  <script defer src="data/usaha-energi.js"></script>
+  <script defer src="data/momentum.js"></script>
+  <script defer src="data/elastisitas-shm.js"></script>
+  <script defer src="data/benda-tegar.js"></script>
+  <script defer src="data/statika-fluida.js"></script>
+  <script defer src="data/dinamika-fluida.js"></script>
+  <script defer src="data/termodinamika.js"></script>
+  <script defer src="data/teori-kinetik.js"></script>
+  <script defer src="data/relativitas.js"></script>
+
+  <!-- Uji Pemahaman: soal olimpiade lintas bab -->
+  <script defer src="data/uji/osk.js"></script>
+  <script defer src="data/uji/osn.js"></script>
+  <script defer src="data/uji/internasional.js"></script>
+  <script defer src="js/uji.js"></script>
+
+  <script defer src="js/app.js"></script>
+  <!-- Aplikasi Android (PWA): daftarkan service worker agar bisa di-install dan jalan offline. -->
+  <script>
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>
