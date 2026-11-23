@@ -1,0 +1,39 @@
+/* Variabel warna. Tema dipilih lewat atribut data-tema pada <html>. */
+:root,
+[data-tema="terang"] {
+  --bg: #f4f6fb;
+  --panel: #ffffff;
+  --teks: #1c2333;
+  --teks2: #586177;
+  --garis: #dde2ee;
+  --aksen: #2f6fed;
+  --aksen-teks: #ffffff;
+  --aksen-muda: #e8efff;
+  --benar: #1b8a4b;
+  --benar-muda: #e4f6ec;
+  --salah: #cf3b3b;
+  --salah-muda: #fdeaea;
+  --peringatan: #a96b0a;
+  --peringatan-muda: #fff4dc;
+  --bayang: 0 2px 10px rgba(20, 30, 60, 0.08);
+  color-scheme: light;
+}
+
+[data-tema="gelap"] {
+  --bg: #11151f;
+  --panel: #1a2030;
+  --teks: #e6eaf5;
+  --teks2: #9aa4bd;
+  --garis: #2c3550;
+  --aksen: #6b9bff;
+  --aksen-teks: #0e1320;
+  --aksen-muda: #223056;
+  --benar: #4cc783;
+  --benar-muda: #153326;
+  --salah: #ff7b7b;
+  --salah-muda: #3a1c1f;
+  --peringatan: #f0b34a;
+  --peringatan-muda: #3a2e14;
+  --bayang: 0 2px 10px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}

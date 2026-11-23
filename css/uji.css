@@ -1,0 +1,52 @@
+/* Gaya tambahan untuk Uji Pemahaman. Memakai variabel warna dari tema.css. */
+
+.sb-item.sb-uji { margin-bottom: 0.6rem; border: 1px dashed var(--aksen); }
+.sb-item.sb-uji .sb-no { background: var(--peringatan); }
+
+.kartu-pilih.kartu-uji { border: 2px solid var(--aksen); background: var(--aksen-muda); }
+.beranda-uji { margin: 1rem 0 1.5rem; }
+
+.uji-lanjut {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; border-left: 4px solid var(--peringatan);
+}
+
+.uji-bab-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.35rem 1rem; margin: 0.4rem 0 0.8rem;
+}
+.uji-cek {
+  display: flex; align-items: center; gap: 0.5rem;
+  min-height: 40px; padding: 0.2rem 0.4rem; border-radius: 8px; cursor: pointer;
+}
+.uji-cek:hover { background: var(--aksen-muda); }
+.uji-cek input { width: 18px; height: 18px; flex: none; accent-color: var(--aksen); }
+
+.uji-info { color: var(--teks2); }
+
+.uji-langkah {
+  margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--garis);
+}
+.uji-langkah h3 { margin: 0 0 0.4rem; font-size: 1rem; }
+.uji-langkah p { margin: 0 0 0.3rem; color: var(--teks2); }
+
+.uji-konsep {
+  margin: 0.8rem 0; padding: 0.8rem 1rem; border-radius: 10px;
+  background: var(--aksen-muda); border-left: 4px solid var(--aksen);
+}
+.uji-konsep p { margin: 0.3rem 0; }
+.uji-konsep ul { margin: 0.2rem 0 0.4rem; }
+
+.uji-peta {
+  display: grid; grid-template-columns: minmax(120px, 1.4fr) 2fr auto;
+  align-items: center; gap: 0.7rem; margin: 0.45rem 0;
+}
+.uji-peta-nama { font-size: 0.95rem; }
+.uji-peta-angka { font-variant-numeric: tabular-nums; color: var(--teks2); font-size: 0.9rem; }
+
+.uji-riwayat { margin: 0; }
+
+@media (max-width: 520px) {
+  .uji-peta { grid-template-columns: 1fr auto; }
+  .uji-peta .bar { grid-column: 1 / -1; grid-row: 2; }
+}
